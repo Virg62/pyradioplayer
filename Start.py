@@ -33,13 +33,14 @@ class Application(QApplication):
 
 class Window(QMainWindow):
     def __init__(self):
+        self.yourapilink = "390-server/radio/" # Ici votre lien d'API
         super().__init__()
         self.initUI()
         self.ajoutListe()
     
 
     def getRadios(self):
-        rep = urllib.request.urlopen("http://390-server/1test/radio/searchST.php?nom=*").read()
+        rep = urllib.request.urlopen("http://"+self.yourapilink+"searchST.php?nom=*").read()
         reponse = json.loads(rep)
         return reponse
 
@@ -187,7 +188,7 @@ class Window(QMainWindow):
             self.radiotitlelabel.adjustSize()
         elif elemt == "logo":
             if "http" not in value:
-                value="http://390-server/radio/"+value
+                value="http://"+self.yourapilink+value
             elif "https" in value:
                 value=value.replace("https","http")
             try:
@@ -233,7 +234,7 @@ class Window(QMainWindow):
 
     def topoc(self, url):
         if "http" not in url:
-            url="http://390-server/radio/"+url
+            url="http://"+self.yourapilink+url
         elif "https" in url:
             url=url.replace("https","http")
 
@@ -290,7 +291,7 @@ class Window(QMainWindow):
         
         
         try:
-            rep = urllib.request.urlopen("http://390-server/radio/req.php?rad="+self.identplay+"&r=21").read().decode("utf8")
+            rep = urllib.request.urlopen("http://"+self.yourapilink+"req.php?rad="+self.identplay+"&r=21").read().decode("utf8")
             reponse = json.loads(rep)
             print(reponse)
             if reponse['tit'] != self.actualtitle:
