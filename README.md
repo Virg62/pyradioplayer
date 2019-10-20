@@ -10,6 +10,6 @@ Lecteur de radio en pyqt5
 ## Liste des radios
 
 La liste de radio (et de l'API) n'est pas définie. Afin que cela fonctionne,
-il faut avoir une API fonctionnelle (voir mon projet OpenHTMLRadio)
+il faut avoir une API fonctionnelle (voir mon projet [OpenHTMLRadio](https://github.com/Virg62/OpenHTMLRadio))
 
 
