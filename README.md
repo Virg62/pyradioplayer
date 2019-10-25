@@ -2,10 +2,12 @@
 Lecteur de radio en pyqt5
 
 ## Dépendances
-- pyqt5
+- pyqt5 (interface graphique)
 `pip3 install pyqt5`
-- python-vlc
+- python-vlc (pour le lecteur de son)
 `pip3 install python-vlc`
+- pillow (pour l'affichage des images)
+`pip3 install pillow`
 
 ## Liste des radios
 
